@@ -1,0 +1,158 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/admin.css" />
+    <link rel="stylesheet" href="/css/uniAdmissionAdminEdit.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/89de733934.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <input type="checkbox" id="check" />
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar" style="margin-top: -25px">
+      <header>AbroadX</header>
+      <ul>
+        <li><a href="/admin"><i class="fas fa-qrcode"></i>Dashboard</a></li>
+        <li><a href="/admin/uniAdmissionAdminEdit"><i
+              class="fas fa-edit"
+            ></i>Edit Uni-Admission</a></li>
+        <li><a href="/admin/uniAdmissionAdminAdd"><i class="fas fa-plus"></i>Add
+            Uni-Admission</a></li>
+        <li><a href="/admin/otherAddition"><i class="fas fa-calendar-week">Other
+              Addition</i></a></li>
+        <li><a href="/admin/blog_admin"><i
+              class="fab fa-blogger-b"
+            ></i>Blog</a></li>
+        <li><a href="/admin/scholarship_admin"><i
+              class="fas fa-funnel-dollar"
+            ></i>Scholarship</a></li>
+        //
+        <li><a href="/admin/team_admin"><i
+              class="fas fa-users"
+            ></i>Team</a></li>
+        <li><a href="/admin/edit_aboutUs"><i
+              class="fas fa-address-card"
+            ></i>Edit About Us</a></li>
+
+      </ul>
+    </div>
+    <section class="body_section">
+
+      <!--    <div class="container body_section">-->
+      <!--        <div class="row">-->
+      <!--            <div class=" col-md-12 col-lg-2 content " id="content-total">-->
+
+      <!--                <img src="https://img.icons8.com/dotty/80/000000/people-working-together.png">-->
+      <!--                <br>-->
+      <!--                <label>Total</label>-->
+      <!--            </div>-->
+
+      <!--            <div class="col-md-12 col-lg-2 content " id="content-bachelor">-->
+      <!--                <img src="https://img.icons8.com/wired/64/000000/student-center.png"/>-->
+      <!--                <br>-->
+      <!--                <label>Bachelor</label>-->
+      <!--            </div>-->
+      <!--            <div class="col-md-12 col-lg-2 content" id="content-master">-->
+      <!--                <img src="https://img.icons8.com/ios/50/000000/university.png"/>-->
+      <!--                <br>-->
+      <!--                <label>Master</label>-->
+      <!--            </div>-->
+      <!--            <div class="col-md-12 col-lg-2 content " id="content-phd">-->
+      <!--                <img src="https://img.icons8.com/dotty/80/000000/admission.png"/>-->
+      <!--                <br>-->
+      <!--                <label>Phd</label>-->
+      <!--            </div>-->
+      <!--        </div>-->
+
+      <h1 id="selected_options_title">All Programs</h1>
+
+      <button onclick="topFunction()" id="myBtn" title="Go to top">▲</button>
+
+      <section class="info_row_section">
+
+        <div class="container">
+          <div class="row" id="all_rows">
+            {{#each universityData}}
+              <!--                    {{!#ifCond currentType '==' "Total"}}-->
+              <div class="col-sm-12 info_row" id="column">
+                <div class="checkbox">
+                  <label for="checkbox">Subject Id:{{this.subject_id}}</label>
+                </div>
+                <label for="record">{{this.subject}}</label>
+                <div class="degree_type_img">
+                  <img
+                    src="/img/cap.png"
+                    alt="cap-img"
+                    width="100px"
+                    height="100px"
+                  />
+
+                  <h6>{{this.level}}</h6>
+                </div>
+                <div class="varsity_name">
+                  <h3>
+                    {{this.university}}
+                  </h3>
+                </div>
+                <div class="button-grp">
+
+                  <a
+                    href="/uni_update_details/{{this.subject_id}}/{{this.level}}"
+                    id="update_button"
+                  >Update</a>
+                  <a
+                    href="/uni_delete_details/{{this.subject_id}}/{{this.level}}"
+                    id="delete_button"
+                  >Delete</a>
+                </div>
+              </div>
+              <!--                    {{!/ifCond}}-->
+            {{/each}}
+          </div>
+
+        </div>
+
+      </section>
+    </section>
+
+    <script
+      src="963https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/uniAdmissionAdminEdit.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+  <!-- Nav Bar -->
+  <%- include("navbar") -%>
+
+  <!-- Banner Section -->
+  <section id="banner">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="true">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/banner/banner_1.jpg" style="width: 100%; height: 100%;" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h2 style="color: black; font-weight: bold;">Earn your degree through an online program.</h2>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/banner/banner_2.jpg" style="width: 100%; height: 100%;" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="img/banner/banner_3.jpg" style="width: 100%; height: 100%;" alt="...">
+        </div>
+      </div>
+      <a class="carousel-control-prev" role="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a class="carousel-control-next" role="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Service Section -->
+  <section id="services">
+    <div class="container">
+      <div class="row row-flex">
+        <div class="col-lg-12">
+          <!-- Section Tittle -->
+          <div class="service-title">
+            <h2>Our Programs</h2>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="gridBox">
+            <div class="gridContent">
+              <h3 class="services_title">Undergraduate</h3>
+              <p class="services_des">The term "undergraduate degree" may lead you to think of a
+                traditional four-year bachelor's program. However, there are two categories of
+                undergraduate degrees that can be distinguished by the amount and level of coursework
+                required to complete each.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="gridBox">
+            <div class="gridContent">
+              <h3 class="services_title">Master's Degree</h3>
+              <p class="services_des">The nature of master’s degree programs mean prospective students must be
+                prepared for an intensive learning experience that incorporates their undergraduate studies and/or
+                their experience gained from employment. But, what is a master’s degree, and is it the right choice for you?
+                Here’s a run-down
+                of everything you need to know about master’s degrees…</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="gridBox">
+            <div class="gridContent">
+              <h3 class="services_title">PhD</h3>
+              <p class="services_des">Holding any type of doctoral degree can help you earn over 50% more than
+                those with a master’s degree.* The professional doctorate and PhD degrees are considered terminal
+                degrees, meaning you have achieved the highest formal degree in the field; as such, they can
+                significantly enhance your résumé and your career.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Statistics section -->
+  <section id="statistics">
+    <div class="content-box"></div>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <div class="stat-items">
+            <i class="fa fa-university"></i>
+            <h2><span class="counter"> <%= countUniversities %> </span></h2>
+            <p>Available Universities</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="stat-items">
+            <i class="fa fa-graduation-cap"></i>
+            <h2><span class="counter"> <%= countScholarships %> </span></h2>
+            <p>Available Scholarships</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="stat-items">
+            <i class="fa fa-clipboard"></i>
+            <h2><span class="counter"> <%= countTopics %> </span></h2>
+            <p>Available topics</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer section -->
+  <%- include("footer") -%>
+
+  <!-- jQuery Here -->
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- jQuery counterup, waypoint -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="assets/js/jquery.waypoints.min.js"></script>
+  <script src="assets/js/jquery.counterup.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.counter').counterUp({
+        delay: 10,
+        time: 1000
+      });
+    });
+  </script>
+
+</body>
+
+</html>
